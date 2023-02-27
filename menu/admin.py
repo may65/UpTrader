@@ -1,16 +1,10 @@
-# from django.contrib import admin
-#
-# Register your models here.
-
 from django.contrib import admin
 from .models import *
 
 @admin.register(Menu)
-class ForumAdmin(admin.ModelAdmin):
-    pass
+class MenuAdmin(admin.ModelAdmin):
     list_display = ('title',)
 
-@admin.register(Submenu)
-class ForumAdmin(admin.ModelAdmin):
-    pass
-    list_display = ('title','menu')
+@admin.register(Parentmenu)
+class ParentmenuAdmin(admin.ModelAdmin):
+    list_display = ('menu', 'parent')
