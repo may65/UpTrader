@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Site made with Mobirise Website Builder v5.6.11, https://mobirise.com -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v5.6.11, mobirise.com">
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image:src" content="">
+    <meta property="og:image" content="">
+    <meta name="twitter:title" content="Home">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="{% static 'assets/images/logo.png' %}" type="image/x-icon">
+    <meta name="description" content="">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-reboot.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/dropdown/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/theme/css/style.css' %}">
+    <link rel="preload"
+          href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+          as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
+    </noscript>
+    <link rel="preload" as="style" href="{% static 'assets/mobirise/css/mbr-additional.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+</head>
+<body>
+<section data-bs-version="5.1" class="menu menu1 cid-twUd8EXh5l" once="menu" id="menu1-10">
+    <br><br><br><br>
+    slug:{{slug}}<br>
+    {% for p in parents %}
+    {{ p.menu|escape }}:{{ p.parent|escape }}<br>
+    {% endfor %}
+    <nav class="navbar navbar-dropdown navbar-expand-lg">
+        <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+            {% for p1 in parents %}
+            {% if p1.parent|escape == "main" %}
+            <li class="nav-item dropdown">
+                <a class="text-black dropdown-item display-4" href="{{ p1.menu|escape }}">
+                    {{ p1.menu|escape }}</a>
+                <div class="dropdown-menu show" aria-labelledby="dropdown-887" data-bs-popper="none">
+                    {% for p2 in parents %}
+                    {% if p2.parent|escape == p1.menu|escape %}
+                    <div class="dropdown">
+                        <a class="text-black dropdown-item display-4" href="{{ p2.menu|escape }}">
+                            {{ p2.menu|escape }}</a>
+                        <div class="dropdown-menu dropdown-submenu" aria-labelledby="dropdown-519">
+                        {% for p3 in parents %}
+                        {% if p3.parent|escape == p2.menu|escape %}
+                            <a class="text-black dropdown-item display-4" href="{{ p3.get_absolute_url }}">
+                                {{ p3.menu|escape }}</a>
+                        {% endif %}
+                        {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </li>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </nav>
+</section>
+<section class="display-7"
+         style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;">
+    <a href="https://mobiri.se/2847169" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;">
+        <!--        <img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">-->
+    </a>
+    <!--    <p style="margin: 0;text-align: center;" class="display-7">Made with &#8204;</p>-->
+    <a style="z-index:1" href="https://mobirise.com/drag-drop-website-builder.html"></a>
+</section>
+<script src="{% static 'assets/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'assets/smoothscroll/smooth-scroll.js' %}"></script>
+<script src="{% static 'assets/ytplayer/index.js' %}"></script>
+<script src="{% static 'assets/dropdown/js/navbar-dropdown.js' %}"></script>
+<script src="{% static 'assets/theme/js/script.js' %}"></script>
+</body>
+</html>
